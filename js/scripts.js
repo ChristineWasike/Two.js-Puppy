@@ -73,7 +73,7 @@ $(document).ready(function () {
     var secondPosition = new Two.Vector(secondTwo.width / 2, secondTwo.height / 2);
 
     var catHead = secondTwo.makeCircle(secondPosition.x + 45, secondPosition.y, 100);
-    catHead.fill = "#F2FF42";
+    catHead.fill = "#FFCE42";
     catHead.noStroke();
 
     var catNose;
@@ -81,6 +81,7 @@ $(document).ready(function () {
     catNose.fill = "#EFB8D2";
     catNose.noStroke();
 
+    // Left side of head
     var catEyeLeft;
     catEyeLeft = secondTwo.makeCircle(secondPosition.x + 87, secondPosition.y - 26, 32);
     catEyeLeft.fill = "#FFFFFF";
@@ -91,16 +92,36 @@ $(document).ready(function () {
     catPupilLeft.fill = "#52C5DC"
     catPupilLeft.noStroke();
 
-
-    // Cat Left Ear took so much time!
+    // Cat left ear took so much time!
     var catEarLeft;
-    catEarLeft = secondTwo.makePolygon(0, 40, 80, 0, 80, 0, 86, 50);
-    catEarLeft.fill = "#F2FF42";
+    catEarLeft = secondTwo.makePolygon(0, 40, 80, 0, 80, 0, 95, 50);
+    catEarLeft.fill = "#FFCE42";
     catEarLeft.scale = 0.8;
     catEarLeft.translation.x = position.x + 115;
     catEarLeft.translation.y = position.y - 85;
-    catEarLeft.rotation = Math.PI /1.3;
+    catEarLeft.rotation = Math.PI / 1.3;
     catEarLeft.noStroke();
+
+    // Right side of head
+    var catEyeRight;
+    catEyeRight = secondTwo.makeCircle(secondPosition.x + 3, secondPosition.y - 26, 32);
+    catEyeRight.fill = "#FFFFFF";
+    catEyeRight.noStroke();
+
+    var catPupilRight;
+    catPupilRight = secondTwo.makeCircle(secondPosition.x - 6, secondPosition.y - 29, 20);
+    catPupilRight.fill = "#52C5DC";
+    catPupilRight.noStroke();
+
+    var catEarRight;
+    catEarRight = secondTwo.makePolygon(0, 40, 80, 0, 80, 0, 95, 50);
+    catEarRight.fill = "#FFCE42";
+    catEarRight.scale = 0.8;
+    catEarRight.translation.x = position.x - 15;
+    catEarRight.translation.y = position.y - 89;
+    catEarRight.rotation = Math.PI / 2.5;
+    catEarRight.noStroke();
+
     secondTwo.update();
     // END OF CAT
 });
