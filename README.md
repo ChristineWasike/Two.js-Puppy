@@ -4,6 +4,10 @@
 
 Puppy is a javascript project for dog lovers, doodlers and JavaScript junkies.
 
+<p align="center">
+<img width="230" height="150" src="https://i.imgur.com/i5iNhny.png">
+</p>
+
 ## Getting Started
 
 ### Prerequisites
