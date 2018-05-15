@@ -1,6 +1,8 @@
 $(document).ready(function () {
+
+    // START OF PUPPY
     var element = document.getElementById('doodle');
-    var two = new Two({ fullscreen: true }).appendTo(element);
+    var two = new Two({ fullscreen: false }).appendTo(element);
 
     var position = new Two.Vector(two.width / 2, two.height / 2);
 
@@ -51,14 +53,54 @@ $(document).ready(function () {
 
     // Lickity Split
 
-    var tongue = two.makePolygon(0,0, 100,0, 100,0, 90,58, 50,80, 10,58, 0,0);
+    var tongue = two.makePolygon(0, 0, 100, 0, 100, 0, 90, 58, 50, 80, 10, 58, 0, 0);
     tongue.curved = true;
     tongue.fill = "#EE3E36";
     tongue.noStroke();
-    tongue.translation.x = position.x-40;
-    tongue.translation.y = position.y+86;
+    tongue.translation.x = position.x - 40;
+    tongue.translation.y = position.y + 86;
     tongue.scale = 0.4;
     tongue.rotation = Math.PI / 4;
 
     two.update();
+
+    // END OF PUPPY
+
+    //START OF CAT
+    var secondElement = document.getElementById('secondDoodle');
+    var secondTwo = new Two({ fullscreen: false }).appendTo(secondElement);
+
+    var secondPosition = new Two.Vector(secondTwo.width / 2, secondTwo.height / 2);
+
+    var catHead = secondTwo.makeCircle(secondPosition.x + 45, secondPosition.y, 100);
+    catHead.fill = "#F2FF42";
+    catHead.noStroke();
+
+    var catNose;
+    catNose = secondTwo.makeCircle(secondPosition.x + 45, secondPosition.y + 30, 32);
+    catNose.fill = "#EFB8D2";
+    catNose.noStroke();
+
+    var catEyeLeft;
+    catEyeLeft = secondTwo.makeCircle(secondPosition.x + 87, secondPosition.y - 26, 32);
+    catEyeLeft.fill = "#FFFFFF";
+    catEyeLeft.noStroke();
+
+    var catPupilLeft;
+    catPupilLeft = secondTwo.makeCircle(secondPosition.x + 78, secondPosition.y - 29, 20);
+    catPupilLeft.fill = "#52C5DC"
+    catPupilLeft.noStroke();
+
+
+    // Cat Left Ear took so much time!
+    var catEarLeft;
+    catEarLeft = secondTwo.makePolygon(0, 40, 80, 0, 80, 0, 86, 50);
+    catEarLeft.fill = "#F2FF42";
+    catEarLeft.scale = 0.8;
+    catEarLeft.translation.x = position.x + 115;
+    catEarLeft.translation.y = position.y - 85;
+    catEarLeft.rotation = Math.PI /1.3;
+    catEarLeft.noStroke();
+    secondTwo.update();
+    // END OF CAT
 });
